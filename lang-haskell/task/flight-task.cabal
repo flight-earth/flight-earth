@@ -1,0 +1,110 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.dhall by hpack version 0.31.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: f6d72ba5fe7be334bc07102c4ccd445acddef7b1564354a05e87bcff5eba3ccb
+
+name:           flight-task
+version:        0.1.0
+synopsis:       Tasks to fly.
+description:    Tasks for hang gliding and paragliding competitons.
+category:       Flight
+homepage:       https://github.com/blockscope/flare-timing#readme
+bug-reports:    https://github.com/blockscope/flare-timing/issues
+author:         Phil de Joux
+maintainer:     phil.dejoux@blockscope.com
+copyright:      © 2017-2019 Phil de Joux, © 2017-2019 Block Scope Limited
+license:        MPL-2.0
+license-file:   LICENSE.md
+tested-with:    GHC == 8.2.2
+build-type:     Simple
+extra-source-files:
+    package.dhall
+    changelog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/blockscope/flare-timing
+  subdir: task
+
+library
+  exposed-modules:
+      Flight.ShortestPath
+      Flight.ShortestPath.Double
+      Flight.ShortestPath.Rational
+      Flight.Task
+  other-modules:
+      Flight.ShortestPath.Cost
+      Flight.ShortestPath.Graph
+      Paths_flight_task
+  hs-source-dirs:
+      library
+  default-extensions: DataKinds DeriveFunctor DeriveGeneric DeriveAnyClass DerivingStrategies DisambiguateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving GADTs LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns OverloadedStrings PackageImports ParallelListComp PartialTypeSignatures PatternSynonyms QuasiQuotes RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances TupleSections UndecidableInstances AllowAmbiguousTypes InstanceSigs UndecidableSuperClasses
+  ghc-options: -Wall -fplugin Data.UnitsOfMeasure.Plugin
+  build-depends:
+      aeson
+    , base >=4.10.1.0 && <5
+    , bifunctors
+    , detour-via-sci
+    , fgl
+    , flight-earth
+    , flight-latlng
+    , flight-units
+    , flight-zone
+    , mtl
+    , numbers
+    , scientific
+    , siggy-chardust
+    , uom-plugin
+  default-language: Haskell2010
+
+test-suite task
+  type: exitcode-stdio-1.0
+  main-is: Task.hs
+  other-modules:
+      Flight.ShortestPath
+      Flight.ShortestPath.Cost
+      Flight.ShortestPath.Double
+      Flight.ShortestPath.Graph
+      Flight.ShortestPath.Rational
+      Flight.Task
+      Crossing
+      Crossing.Day8.Zone1
+      Crossing.Day8.Zone2
+      Crossing.Day8.Zone3
+      Crossing.Day8.Zone4
+      Crossing.Day8.Zone5
+      EdgeToEdge
+      TestNewtypes
+      Zone
+      Paths_flight_task
+  hs-source-dirs:
+      library
+      test-suite-task
+  default-extensions: DataKinds DeriveFunctor DeriveGeneric DeriveAnyClass DerivingStrategies DisambiguateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving GADTs LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns OverloadedStrings PackageImports ParallelListComp PartialTypeSignatures PatternSynonyms QuasiQuotes RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances TupleSections UndecidableInstances AllowAmbiguousTypes InstanceSigs UndecidableSuperClasses
+  ghc-options: -Wall -fplugin Data.UnitsOfMeasure.Plugin -rtsopts -threaded -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.10.1.0 && <5
+    , bifunctors
+    , detour-via-sci
+    , fgl
+    , flight-earth
+    , flight-latlng
+    , flight-units
+    , flight-zone
+    , mtl
+    , numbers
+    , scientific
+    , siggy-chardust
+    , smallcheck
+    , tasty
+    , tasty-compare
+    , tasty-hunit
+    , tasty-quickcheck
+    , tasty-smallcheck
+    , uom-plugin
+  default-language: Haskell2010

@@ -1,0 +1,80 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.dhall by hpack version 0.31.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a13112832e062a32e257a0b0e04d60b9e8a2e0c3e38c51921265b56ce4b1ec5b
+
+name:           siggy-chardust
+version:        1.0.0
+synopsis:       Rounding rationals to significant digits and decimal places.
+description:    The round function from the prelude returns an integer. The standard librarys of C and C++ have round functions that return floating point numbers. Rounding in this library takes and returns rationals and can round to a number of significant digits or a number of decimal places.
+category:       Data, Math, Numeric
+homepage:       https://github.com/blockscope/flare-timing/tree/master/siggy-chardust#readme
+bug-reports:    https://github.com/blockscope/flare-timing/issues
+author:         Phil de Joux
+maintainer:     phil.dejoux@blockscope.com
+copyright:      © 2017-2019 Phil de Joux, © 2017-2019 Block Scope Limited
+license:        MPL-2.0
+license-file:   LICENSE.md
+tested-with:    GHC == 8.2.2
+build-type:     Simple
+extra-source-files:
+    package.dhall
+    changelog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/blockscope/flare-timing
+  subdir: siggy-chardust
+
+library
+  exposed-modules:
+      Data.Ratio.Rounding
+  other-modules:
+      Paths_siggy_chardust
+  hs-source-dirs:
+      library
+  default-extensions: PackageImports
+  ghc-options: -Wall -Werror
+  build-depends:
+      base >=4.10.1.0 && <5
+  default-language: Haskell2010
+
+test-suite digits
+  type: exitcode-stdio-1.0
+  main-is: Rounding.hs
+  other-modules:
+      Data.Ratio.Rounding
+      Paths_siggy_chardust
+  hs-source-dirs:
+      library
+      test-suite-digits
+  default-extensions: PackageImports
+  ghc-options: -Wall -Werror -rtsopts -threaded -with-rtsopts=-N
+  build-depends:
+      base >=4.10.1.0 && <5
+    , smallcheck
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , tasty-smallcheck
+  default-language: Haskell2010
+
+test-suite doctest
+  type: exitcode-stdio-1.0
+  main-is: DocTest.hs
+  other-modules:
+      Data.Ratio.Rounding
+      Paths_siggy_chardust
+  hs-source-dirs:
+      library
+      test-suite-doctest
+  default-extensions: PackageImports
+  ghc-options: -Wall -Werror -rtsopts -threaded -with-rtsopts=-N
+  build-depends:
+      base
+    , doctest
+  default-language: Haskell2010

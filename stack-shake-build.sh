@@ -2,5 +2,5 @@
 
 #set +v
 
-stack install ft-build
-ft-build $@
+stack install fe-build
+fe-build $@

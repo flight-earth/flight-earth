@@ -26,7 +26,7 @@ dhallCabal :: [(Folder, Pkg)]
 dhallCabal =
     [ ("lang-haskell/detour-via-sci", "detour-via-sci")
     , ("lang-haskell/detour-via-uom", "detour-via-uom")
-    , ("lang-haskell/build", "ft-build")
+    , ("lang-haskell/build", "fe-build")
     , ("lang-haskell/earth", "flight-earth")
     , ("lang-haskell/latlng", "flight-latlng")
     , ("lang-haskell/route", "flight-route")

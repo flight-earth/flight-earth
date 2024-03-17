@@ -1,7 +1,7 @@
 let mkHome = ./../home.dhall
 
 in    ./../defaults.dhall
-    ⫽ { name = "ft-build"
+    ⫽ { name = "fe-build"
       , homepage = mkHome "lang-haskell/build#readme"
       , synopsis = "A shake build of flare-timing."
       , description = "Builds the packages making up flare-timing."
@@ -15,7 +15,7 @@ in    ./../defaults.dhall
         , "text"
         , "time"
         ]
-      , executables.ft-build
+      , executables.fe-build
         =
         { ghc-options = [ "-rtsopts", "-threaded", "-with-rtsopts=-N" ]
         , main = "Main.hs"

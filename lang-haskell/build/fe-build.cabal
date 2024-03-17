@@ -3,10 +3,8 @@ cabal-version: 1.12
 -- This file has been generated from package.dhall by hpack version 0.35.2.
 --
 -- see: https://github.com/sol/hpack
---
--- hash: 1f0472f556a13223566e7e7ae1bd72646779a9f8ae63abf3487557e8900b9dcc
 
-name:           ft-build
+name:           fe-build
 version:        0.1.0
 synopsis:       A shake build of flare-timing.
 description:    Builds the packages making up flare-timing.
@@ -18,9 +16,9 @@ maintainer:     phil.dejoux@blockscope.com
 copyright:      © 2017-2019 Phil de Joux, © 2017-2019 Block Scope Limited
 license:        MPL-2.0
 license-file:   LICENSE.md
+build-type:     Simple
 tested-with:
     GHC == 8.2.2
-build-type:     Simple
 extra-source-files:
     package.dhall
     changelog.md
@@ -34,7 +32,7 @@ flag suppress-failing-tests
   manual: False
   default: True
 
-executable ft-build
+executable fe-build
   main-is: Main.hs
   other-modules:
       Driver
@@ -43,7 +41,7 @@ executable ft-build
       Pkg
       Snack
       Target
-      Paths_ft_build
+      Paths_fe_build
   hs-source-dirs:
       app-cmd
       library

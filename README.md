@@ -1,9 +1,8 @@
 # Flare Timing
 
-![stack](https://github.com/BlockScope/flare-timing/workflows/stack/badge.svg)
-![cabal](https://github.com/BlockScope/flare-timing/workflows/cabal/badge.svg)
-![pier](https://github.com/BlockScope/flare-timing/workflows/pier/badge.svg)
-[![docs](https://readthedocs.org/projects/flare-timing/badge/?version=latest)](https://flare-timing.readthedocs.io/en/latest/?badge=latest)
+![stack](https://github.com/flight-earth/flight-earth/workflows/stack/badge.svg)
+![cabal](https://github.com/flight-earth/flight-earth/workflows/cabal/badge.svg)
+![pier](https://github.com/flight-earth/flight-earth/workflows/pier/badge.svg)
 
 > [!IMPORTANT]
 > This project depends on `uom-plugin-0.3.0.0` that was constrained to use

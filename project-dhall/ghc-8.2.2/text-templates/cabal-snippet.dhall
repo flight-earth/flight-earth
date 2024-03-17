@@ -1,4 +1,4 @@
 ''
 program-options
-  ghc-options: -fhide-source-paths -Werror
+  ghc-options: -fhide-source-paths
 ''

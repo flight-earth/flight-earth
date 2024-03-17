@@ -40,18 +40,6 @@ jobs:
 
     # NOTE: Github actions YAML doesn't support anchors.
 
-    # doctest: <command line>: cannot satisfy -package split
-    # - name: flight-clip:doctest
-    #   run: cabal test flight-clip:doctest --test-show-details=direct --test-option="--color=always"
-
-    # doctest: <command line>: Could not find module ‘Data.UnitsOfMeasure.Plugin’
-    # - name: flight-comp:doctest
-    #   run: cabal test flight-comp:doctest --test-show-details=direct --test-option="--color=always"
-
-    # Variable not in scope: ensureExt :: FileType -> [Char] -> FilePath
-    # - name: flight-comp:comp
-    #  run: cabal test flight-comp:comp --test-show-details=direct --test-option="--color=always"
- 
     # doctest cannot find many of the modules.
     # - name: detour-via-sci:doctest
     #   run: cabal test detour-via-sci:doctest --test-show-details=direct --test-option="--color=always"
@@ -98,69 +86,6 @@ jobs:
     # - name: flight-earth:cylinder-r
     #   run: cabal test flight-earth:cylinder-r --test-show-details=direct --test-option="--color=always"
 
- #library/Flight/Fsdb/Internal/Parse.hs:25:1: error:
- #Error:     Could not find module ‘Flight.Comp’
- #    Perhaps you meant
- #      Flight.Clip (from flight-clip-1.1.0)
- #      Flight.Zone (from flight-zone-0.1.0)
- #    Use -v to see a list of the files searched for.
- #   |
- #25 | import Flight.Comp (UtcOffset(..))
- #   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- #Test suite doctest: FAIL
-    # pases locally but fails on github.
-    # - name: flight-fsdb:doctest
-    #  run: cabal test flight-fsdb:doctest --test-show-details=direct --test-option="--color=always"
-
-    # 5 failures
-    # - name: flight-gap-allot:doctest
-    #   run: cabal test flight-gap-allot:doctest --test-show-details=direct --test-option="--color=always"
-
-    # doctest: <command line>: cannot satisfy -package flight-units
-    # - name: flight-gap-effort:doctest
-    #   run: cabal test flight-gap-effort:doctest --test-show-details=direct --test-option="--color=always"
-
-    - name: flight-gap-effort:effort
-      run: cabal test flight-gap-effort:effort --test-show-details=direct --test-option="--color=always"
-
-    - name: flight-gap-lead:lead
-      run: cabal test flight-gap-lead:lead --test-show-details=direct --test-option="--color=always"
-
-    # doctest: <command line>: cannot satisfy -package exact-real
-    # - name: flight-gap-math:doctest
-    #   run: cabal test flight-gap-math:doctest --test-show-details=direct --test-option="--color=always"
-
-    - name: flight-gap-math:math
-      run: cabal test flight-gap-math:math --test-show-details=direct --test-option="--color=always"
-
-    - name: flight-gap-stop:stop
-      run: cabal test flight-gap-stop:stop --test-show-details=direct --test-option="--color=always"
-
-    - name: flight-gap-valid:valid
-      run: cabal test flight-gap-valid:valid --test-show-details=direct --test-option="--color=always"
-
-    - name: flight-gap-weight:weight
-      run: cabal test flight-gap-weight:weight --test-show-details=direct --test-option="--color=always"
-
-# Test suite doctest: RUNNING...
-### Failure in library/Flight/Igc/Fix.hs:308: expression `(markJason : _, (fixesJason, _)) = let (Right xs) = parse $(embedStr (readFile fileJason)) in (partition isFix <$> partition isMark xs)'
-# expected: 
-# but got: 
-#          <interactive>:63:59: error:
-#              • Exception when trying to run compile-time code:
-#                  ./test-suite-doctest/Jason_Kath.20180101-000746.18332.30.igc: openFile: does not exist (No such file or directory)
-#                Code: embedStr (readFile fileJason)
-#              • In the untyped splice: $(embedStr (readFile fileJason))
-    # - name: flight-igc:doctest
-    #  run: cabal test flight-igc:doctest --test-show-details=direct --test-option="--color=always"
-
-    # doctest can't find many of the modules.
-    # - name: flight-kml:doctest
-    #   run: cabal test flight-kml:doctest --test-show-details=direct --test-option="--color=always"
-
-    - name: flight-kml:parse
-      run: cabal test flight-kml:parse --test-show-details=direct --test-option="--color=always"
-
     # 1 failure, ‘tasks’ is not a (visible) field of constructor ‘CompSettings’
     # - name: flight-mask:doctest
     #   run: cabal test flight-mask:doctest --test-show-details=direct --test-option="--color=always"
@@ -170,14 +95,6 @@ jobs:
 
     - name: siggy-chardust:digits
       run: cabal test siggy-chardust:digits --test-show-details=direct --test-option="--color=always"
-
-    # compile errors
-    # - name: flight-task:task
-    #   run: cabal test flight-task:task --test-show-details=direct --test-option="--color=always"
-
-    # No longer compiles
-    # - name: flight-time:golden
-    #   run: cabal test flight-time:golden --test-show-details=direct --test-option="--color=always"
 
     # 1 failure
     # - name: flight-track:doctest

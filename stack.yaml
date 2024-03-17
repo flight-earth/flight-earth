@@ -2,8 +2,9 @@ user-message: "WARNING: This stack project is generated."
 
 resolver: lts-11.22
 
-# We have 11 packages.
+# We have 12 packages.
 packages:
+  - ./lang-haskell/build
   - ./lang-haskell/detour-via-sci
   - ./lang-haskell/detour-via-uom
   - ./lang-haskell/earth

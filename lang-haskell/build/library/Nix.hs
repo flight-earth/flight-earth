@@ -24,22 +24,15 @@ import Development.Shake.FilePath ((<.>), (</>), dropFileName)
 -- | The names of the hlint tests
 flyPkgs :: [String]
 flyPkgs =
-    [ "clip"
-    , "cmd"
-    , "comp"
-    , "earth"
-    , "fsdb"
+    [ "earth"
     , "gap"
     , "igc"
     , "kml"
     , "latlng"
-    , "lookup"
     , "mask"
     , "route"
-    , "scribe"
     , "span"
     , "task"
-    , "time"
     , "track"
     , "units"
     , "zone"
@@ -51,8 +44,6 @@ shellPkgs =
     , "detour-via-uom"
     , "siggy-chardust"
     , "tasty-compare"
-    , "flare-timing"
-    , "app-serve"
     ]
     ++ flyPkgs
 
@@ -68,8 +59,6 @@ buildRules = do
              , "nix-build-detour-via-uom"
              , "nix-build-siggy-chardust"
              , "nix-build-tasty-compare"
-             , "nix-build-flare-timing"
-             , "nix-build-app-serve"
              ]
              ++
              (prefix "nix-build-flight-" <$> flyPkgs))
@@ -78,8 +67,6 @@ buildRules = do
     phony' "detour-via-uom"
     phony' "siggy-chardust"
     phony' "tasty-compare"
-    phony' "flare-timing"
-    phony' "app-serve"
 
     where
         phony' s = do
@@ -106,8 +93,6 @@ fromCabalRules = do
         : "cabal2nix-detour-via-uom"
         : "cabal2nix-siggy-chardust"
         : "cabal2nix-tasty-compare"
-        : "cabal2nix-flare-timing"
-        : "cabal2nix-app-serve"
         : (prefix "cabal2nix-" <$> flyPkgs)
 
     phony "cabal2nix-detour-via-sci" $
@@ -133,18 +118,6 @@ fromCabalRules = do
             (Cwd "tasty-compare")
             Shell
             (cabal2nix "tasty-compare")
-
-    phony "cabal2nix-flare-timing" $
-        cmd
-            (Cwd "flare-timing")
-            Shell
-            (cabal2nix "flare-timing")
-
-    phony "cabal2nix-app-serve" $
-        cmd
-            (Cwd "app-serve")
-            Shell
-            (cabal2nix "app-serve")
 
     where
         fromCabalRule :: String -> Rules ()

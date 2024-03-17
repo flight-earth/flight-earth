@@ -72,24 +72,15 @@ pkgs :: [Pkg]
 pkgs =
     [ "detour-via-sci"
     , "detour-via-uom"
-    , "flight-clip"
-    , "flight-cmd"
-    , "flight-comp"
     , "flight-earth"
-    , "flight-fsdb"
     , "flight-gap"
     , "flight-igc"
     , "flight-kml"
     , "flight-latlng"
-    , "flight-lookup"
-    , "flight-mask"
     , "flight-route"
-    , "flight-scribe"
     , "siggy-chardust"
     , "flight-span"
     , "flight-task"
-    , "flight-time"
-    , "flight-track"
     , "flight-units"
     , "flight-zone"
     , "tasty-compare"
@@ -99,8 +90,6 @@ pkgs =
 testPkgs :: [(Pkg, Test)]
 testPkgs =
     [ ("siggy-chardust", "digits")
-    -- TODO: Get flight-comp:test:comp compiling again.
-    -- , ("flight-comp", "comp")
     , ("flight-earth", "geodesy")
     , ("flight-earth", "forbes")
     , ("flight-earth", "forbes-r")
@@ -122,11 +111,8 @@ docTestPkgs =
     -- TODO: Investigate why detour-via-uom doctests are failing with the u quasiquote.
     -- , "detour-via-uom"
     , "siggy-chardust"
-    , "flight-clip"
-    , "flight-comp"
     , "flight-kml"
     , "flight-igc"
-    , "flight-track"
     ]
 
 -- | The names of the test app executables.

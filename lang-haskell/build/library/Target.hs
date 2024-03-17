@@ -1,7 +1,6 @@
 module Target where
 
 import Development.Shake (Rules)
-import Doc (buildRules, cleanRules)
 import Cmd (buildRules, cleanRules, testRules, lintRules, docTestRules)
 import Nix (buildRules, cleanRules, shellRules, fromCabalRules)
 import Snack (buildRules, testRules, rulesSiggyChardust)
@@ -30,13 +29,11 @@ allRules = do
 
 cleanRules :: Rules ()
 cleanRules = do
-    Doc.cleanRules
     Cmd.cleanRules
     Nix.cleanRules
 
 buildRules :: Rules ()
 buildRules = do
-    Doc.buildRules
     Pkg.buildRules
     Cmd.buildRules
     Nix.buildRules

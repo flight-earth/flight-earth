@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c6240a7b8dd129dcd610928a7b39bace69e59500736c03d33f0ca2e7da12b946
+-- hash: 1f0472f556a13223566e7e7ae1bd72646779a9f8ae63abf3487557e8900b9dcc
 
 name:           ft-build
 version:        0.1.0
@@ -39,7 +39,6 @@ executable ft-build
   other-modules:
       Driver
       Cmd
-      Doc
       Nix
       Pkg
       Snack
